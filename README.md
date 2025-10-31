@@ -34,7 +34,6 @@ The system allows controlling devices like a **bulb** and **fan** using:
 ## 🔧 Hardware Requirements
 - LPC2129 Microcontroller  
 - HC-05 Bluetooth Module  
-- 16x2 LCD (optional)  
 - Switches: SW1, SW2, SW3  
 - LEDs for load simulation  
 - Power supply + wires  
@@ -42,15 +41,16 @@ The system allows controlling devices like a **bulb** and **fan** using:
 ---
 
 ## 🔌 Pin Configuration
-| LPC2129 Pin | Description |
-|-------------|-------------|
-| P0.17 | LED1 (Bulb) |
-| P0.18 | LED2 (Fan) |
-| P0.19 | Status LED |
-| P0.14 | SW1 – Bulb control |
-| P0.15 | SW2 – Fan control |
-| P0.16 | SW3 – Mode switch |
-| P0.0 / P0.1 | UART0 TX/RX for HC-05 |
+| LPC2129 Pin | Description        |
+|-------------|--------------------|
+| P0.17       | LED1 (Bulb)        |
+| P0.18       | LED2 (Fan)         |
+| P0.19       | Status LED         |
+| P0.14       | SW1 – Bulb control |
+| P0.15       | SW2 – Fan control  |
+| P0.16       | SW3 – Mode switch  |
+| P0.0        | UART0 TX for HC-05 |
+|  P0.1       | UART0 RX for HC-05 |
 
 ---
 
@@ -84,21 +84,6 @@ Invalid input is displayed on the LCD.
 
 ---
 
-## 🛠 UART Driver Overview (uart.c)
-Includes:
-- `uart0_init()`
-- `uart0_tx()`
-- `uart0_rx()`
-- `uart0_tx_string()`
-- `uart0_rx_string()`
-- `uart0_tx_float()`
-- `uart0_tx_integer()`
-- `uart0_hex()`
-
-Configured for **9600 baud** using VPBDIV clock.
-
----
-
 ## ⚙️ How to Compile & Upload
 
 1. Open Keil uVision / LPCXpresso  
@@ -119,10 +104,4 @@ Configured for **9600 baud** using VPBDIV clock.
 5. Observe the LEDs controlling Bulb/Fan
 
 ---
-
-## 🚀 Future Enhancements
-- Add relays for AC appliances  
-- Add Wi-Fi + MQTT  
-- Add OLED/LCD UI  
-- Voice control (Google Assistant/Alexa)  
 
